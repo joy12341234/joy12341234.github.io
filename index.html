@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이력서 - 윤재호</title>
     <style>
-        /* 배경 설정: 보내주신 이미지의 파스텔 그라데이션 느낌 재현 */
+        /* 배경 설정: 파스텔 그라데이션 */
         body {
             margin: 0;
             padding: 0;
@@ -13,15 +13,15 @@
             background: linear-gradient(135deg, #fce4ec 0%, #e1f5fe 25%, #f3e5f5 50%, #e8f5e9 75%, #fff9c4 100%);
             background-attachment: fixed;
             color: #4a5568;
-            scroll-behavior: smooth; /* 부드러운 스크롤 */
+            scroll-behavior: smooth;
         }
 
-        /* 상단 고정 목차 (Navigation) */
+        /* 상단 고정 목차 */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             z-index: 1000;
@@ -30,85 +30,87 @@
             padding: 15px 0;
         }
         nav a {
-            margin: 0 15px;
+            margin: 0 12px;
             text-decoration: none;
-            color: #7da2d1;
+            color: #5c6bc0;
             font-weight: bold;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            font-size: 0.9rem;
+            transition: all 0.3s;
         }
-        nav a:hover { color: #ffabce; }
+        nav a:hover { color: #ff80ab; transform: scale(1.1); }
 
         .container {
             max-width: 850px;
             margin: 100px auto 50px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             padding: 50px;
             border-radius: 30px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.03);
         }
 
-        /* 섹션 타이틀 공통 */
-        section { margin-bottom: 60px; padding-top: 20px; }
+        /* 섹션 타이틀 */
+        section { margin-bottom: 50px; padding-top: 30px; }
         h2 {
             font-size: 1.6rem;
-            color: #9fa8da; /* 파스텔 퍼플 블루 */
+            color: #7986cb;
             border-bottom: 3px solid #f1f6ff;
             padding-bottom: 10px;
             margin-bottom: 25px;
             display: flex;
             align-items: center;
         }
-        h2 span { margin-right: 10px; }
 
         /* 기본 정보 */
         header { text-align: center; margin-bottom: 50px; }
-        header h1 { font-size: 2.8rem; color: #5c6bc0; margin-bottom: 15px; }
-        .info-p { font-size: 1.05rem; color: #777; margin: 5px 0; }
-        .info-p a { color: #9fa8da; text-decoration: none; }
+        header h1 { font-size: 2.5rem; color: #3f51b5; margin-bottom: 15px; }
+        .info-p { font-size: 1rem; color: #666; margin: 8px 0; }
+        .info-p a { color: #7986cb; text-decoration: none; font-weight: 500; }
 
-        /* 강점 섹션 */
+        /* 강점 및 프로젝트 카드 */
         .card {
             background: #fff;
             border: 1px solid #f0f0f0;
-            padding: 20px;
-            border-radius: 15px;
+            padding: 22px;
+            border-radius: 18px;
             margin-bottom: 15px;
-            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
-        .card:hover { transform: translateY(-5px); }
-        .card-title { font-weight: bold; font-size: 1.15rem; color: #555; margin-bottom: 8px; }
-        .card-desc { font-size: 0.95rem; color: #888; }
+        .card-title { font-weight: bold; font-size: 1.1rem; color: #444; margin-bottom: 8px; }
+        .card-desc { font-size: 0.95rem; color: #777; line-height: 1.7; }
 
-        /* 기술 스택 그리드 */
+        /* 기술 스택 (풀네임 적용) */
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
         }
         .tech-item {
-            padding: 15px;
+            padding: 18px;
             border-radius: 15px;
-            text-align: center;
-            font-weight: 500;
+            line-height: 1.6;
         }
-        .t1 { background-color: #e3f2fd; color: #1e88e5; } /* 블루 */
-        .t2 { background-color: #fce4ec; color: #d81b60; } /* 핑크 */
-        .t3 { background-color: #f3e5f5; color: #8e24aa; } /* 퍼플 */
-        .t4 { background-color: #e8f5e9; color: #2e7d32; } /* 그린 */
+        .tech-item strong { display: block; margin-bottom: 5px; font-size: 1.05rem; }
+        
+        .t-front { background-color: #e3f2fd; color: #1565c0; }
+        .t-back { background-color: #f3e5f5; color: #7b1fa2; }
+        .t-arvr { background-color: #e8f5e9; color: #2e7d32; }
+        .t-hw { background-color: #fff3e0; color: #e65100; }
+        .t-db { background-color: #fce4ec; color: #c2185b; }
+        .t-video { background-color: #ede7f6; color: #4527a0; }
 
         /* 학력 */
-        .edu-box { padding-left: 10px; }
-        .univ { font-size: 1.2rem; font-weight: bold; color: #444; }
-        .date { font-size: 0.9rem; color: #aaa; margin-top: 5px; }
+        .edu-box { padding: 10px; }
+        .univ { font-size: 1.15rem; font-weight: bold; color: #333; }
+        .date { font-size: 0.9rem; color: #888; margin-top: 4px; }
 
-        /* 수상내역 (빈 공간) */
+        /* 수상내역 */
         .empty {
             border: 2px dashed #e0e0e0;
-            padding: 30px;
+            padding: 40px;
             text-align: center;
-            color: #ccc;
+            color: #bbb;
             border-radius: 15px;
+            font-size: 0.95rem;
         }
     </style>
 </head>
@@ -125,47 +127,66 @@
 
     <div class="container">
         <header id="basic">
-            <h1>안녕하세요, 윤재호입니다 👋</h1>
+            <h1>👨‍💻 개발자 윤재호</h1>
             <p class="info-p">📧 이메일: <a href="mailto:dbswogh0715@dongyang.ac.kr">dbswogh0715@dongyang.ac.kr</a></p>
             <p class="info-p">🔗 GitHub: <a href="https://github.com/joy12341234" target="_blank">github.com/joy12341234</a></p>
         </header>
 
         <section id="strengths">
-            <h2><span>💪</span> 강점</h2>
+            <h2>💪 강점</h2>
             <div class="card">
                 <div class="card-title">1. 무한하고 획기적인 기획 능력 💡</div>
-                <div class="card-desc">기존의 틀에 얽매이지 않는 유연한 사고로, 프로젝트의 핵심 가치를 높이는 창의적인 아이디어를 도출합니다.</div>
+                <div class="card-desc">사용자의 숨겨진 니즈를 파악하여 기술과 감성이 조화된 새로운 서비스를 기획하며, 문제 해결을 위한 독창적인 접근 방식을 제시합니다.</div>
             </div>
             <div class="card">
                 <div class="card-title">2. AR/VR 컨텐츠 기획 및 디자인 능력 👓</div>
-                <div class="card-desc">가상 세계와 현실을 잇는 몰입감 있는 사용자 경험을 설계하며, 실감형 기술의 특성을 극대화한 콘텐츠를 제작합니다.</div>
+                <div class="card-desc">가상 현실에서의 몰입형 사용자 인터페이스(UI)와 경험(UX)을 설계하고, 효율적인 스토리보드 작성을 통해 생동감 있는 콘텐츠를 구축합니다.</div>
             </div>
         </section>
 
         <section id="tech">
-            <h2><span>🛠️</span> 기술 스택</h2>
+            <h2>🛠️ 기술 스택</h2>
             <div class="tech-grid">
-                <div class="tech-item t1"><strong>Front:</strong> React, HTML, CSS</div>
-                <div class="tech-item t2"><strong>Back:</strong> Java, REST API</div>
-                <div class="tech-item t3"><strong>AR/VR:</strong> Unity, C#, Unreal, Blender</div>
-                <div class="tech-item t4"><strong>HW:</strong> C, Arduino, MySQL</div>
+                <div class="tech-item t-front">
+                    <strong>💻 Front-End</strong>
+                    React, HTML, CSS
+                </div>
+                <div class="tech-item t-back">
+                    <strong>⚙️ Back-End</strong>
+                    Java, REST API
+                </div>
+                <div class="tech-item t-arvr">
+                    <strong>🥽 AR/VR Development</strong>
+                    Unity, C#, Unreal Engine, Blender
+                </div>
+                <div class="tech-item t-hw">
+                    <strong>🔌 System & Hardware</strong>
+                    C, Arduino
+                </div>
+                <div class="tech-item t-db">
+                    <strong>🗄️ Database</strong>
+                    MySQL
+                </div>
+                <div class="tech-item t-video">
+                    <strong>🎬 Video Editing</strong>
+                    Adobe After Effects
+                </div>
             </div>
-            <div class="tech-item" style="margin-top:10px; background:#fff3e0; color:#ef6c00;"><strong>Video:</strong> Adobe After Effects</div>
         </section>
 
         <section id="project">
-            <h2><span>🚀</span> 프로젝트</h2>
+            <h2>🚀 프로젝트</h2>
             <div class="card" style="border-left: 5px solid #ffccbc;">
                 <div class="card-title">UPM (Universal Process Manager)</div>
                 <div class="card-desc">
-                    복잡한 컴퓨터 시스템 자원을 직관적으로 관리할 수 있는 최적화 솔루션입니다. 
-                    사용자 친화적인 프로세스 모니터링 기능을 통해 효율적인 하드웨어 제어 환경을 제공합니다.
+                    복잡한 윈도우 프로세스를 직관적으로 모니터링하고 제어할 수 있는 시스템 최적화 프로그램입니다. 
+                    하드웨어 리소스 효율성을 극대화하기 위한 대시보드와 사용자 친화적 관리 인터페이스를 구현했습니다.
                 </div>
             </div>
         </section>
 
         <section id="edu">
-            <h2><span>🎓</span> 학력 / 경력</h2>
+            <h2>🎓 학력 / 경력</h2>
             <div class="edu-box">
                 <p class="univ">동양미래대학교 컴퓨터소프트웨어공학과</p>
                 <p class="date">2021 ~ ing</p>
@@ -173,8 +194,8 @@
         </section>
 
         <section id="awards">
-            <h2><span>🏆</span> 수상내역</h2>
-            <div class="empty">새로운 수상 내역을 기다리고 있습니다.</div>
+            <h2>🏆 수상내역</h2>
+            <div class="empty">업데이트 예정입니다.</div>
         </section>
     </div>
 
