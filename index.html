@@ -1,141 +1,182 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>윤재호 이력서</title>
-  <style>
-    html { scroll-behavior: smooth; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이력서 - 윤재호</title>
+    <style>
+        /* 배경 설정: 보내주신 이미지의 파스텔 그라데이션 느낌 재현 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #e1f5fe 25%, #f3e5f5 50%, #e8f5e9 75%, #fff9c4 100%);
+            background-attachment: fixed;
+            color: #4a5568;
+            scroll-behavior: smooth; /* 부드러운 스크롤 */
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #4a4a4a;
-      background: linear-gradient(135deg, #f7c6e0, #c6e6f7, #d7c6f7);
-      background-attachment: fixed;
-    }
+        /* 상단 고정 목차 (Navigation) */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #7da2d1;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #ffabce; }
 
-    /* 상단 고정 메뉴 */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
+        .container {
+            max-width: 850px;
+            margin: 100px auto 50px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+        }
 
-    nav a {
-      text-decoration: none;
-      color: #6a6a6a;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+        /* 섹션 타이틀 공통 */
+        section { margin-bottom: 60px; padding-top: 20px; }
+        h2 {
+            font-size: 1.6rem;
+            color: #9fa8da; /* 파스텔 퍼플 블루 */
+            border-bottom: 3px solid #f1f6ff;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        h2 span { margin-right: 10px; }
 
-    nav a:hover {
-      color: #7e9eff;
-    }
+        /* 기본 정보 */
+        header { text-align: center; margin-bottom: 50px; }
+        header h1 { font-size: 2.8rem; color: #5c6bc0; margin-bottom: 15px; }
+        .info-p { font-size: 1.05rem; color: #777; margin: 5px 0; }
+        .info-p a { color: #9fa8da; text-decoration: none; }
 
-    .container {
-      width: 80%;
-      margin: 100px auto 50px; /* nav 공간 확보 */
-    }
+        /* 강점 섹션 */
+        .card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card-title { font-weight: bold; font-size: 1.15rem; color: #555; margin-bottom: 8px; }
+        .card-desc { font-size: 0.95rem; color: #888; }
 
-    header {
-      text-align: center;
-      padding: 40px 0;
-      background: rgba(255,255,255,0.8);
-      border-radius: 20px;
-    }
+        /* 기술 스택 그리드 */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .tech-item {
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+        .t1 { background-color: #e3f2fd; color: #1e88e5; } /* 블루 */
+        .t2 { background-color: #fce4ec; color: #d81b60; } /* 핑크 */
+        .t3 { background-color: #f3e5f5; color: #8e24aa; } /* 퍼플 */
+        .t4 { background-color: #e8f5e9; color: #2e7d32; } /* 그린 */
 
-    h1 { margin: 0; }
+        /* 학력 */
+        .edu-box { padding-left: 10px; }
+        .univ { font-size: 1.2rem; font-weight: bold; color: #444; }
+        .date { font-size: 0.9rem; color: #aaa; margin-top: 5px; }
 
-    h2 {
-      margin-top: 40px;
-      color: #555;
-    }
-
-    .section {
-      background: rgba(255,255,255,0.85);
-      padding: 25px;
-      margin-top: 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-
-    ul { padding-left: 20px; }
-
-    .small {
-      font-size: 0.9rem;
-      color: #888;
-    }
-
-    a { color: #7e9eff; }
-  </style>
+        /* 수상내역 (빈 공간) */
+        .empty {
+            border: 2px dashed #e0e0e0;
+            padding: 30px;
+            text-align: center;
+            color: #ccc;
+            border-radius: 15px;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- 네비게이션 -->
-  <nav>
-    <a href="#info">👤 기본정보</a>
-    <a href="#strength">💡 강점</a>
-    <a href="#skill">🛠 기술 스택</a>
-    <a href="#project">📂 프로젝트</a>
-    <a href="#edu">🎓 학력/경력</a>
-    <a href="#award">🏆 수상내역</a>
-  </nav>
+    <nav>
+        <a href="#basic">기본정보 📋</a>
+        <a href="#strengths">강점 💪</a>
+        <a href="#tech">기술스택 🛠️</a>
+        <a href="#project">프로젝트 🚀</a>
+        <a href="#edu">학력/경력 🎓</a>
+        <a href="#awards">수상내역 🏆</a>
+    </nav>
 
-  <div class="container">
+    <div class="container">
+        <header id="basic">
+            <h1>안녕하세요, 윤재호입니다 👋</h1>
+            <p class="info-p">📧 이메일: <a href="mailto:dbswogh0715@dongyang.ac.kr">dbswogh0715@dongyang.ac.kr</a></p>
+            <p class="info-p">🔗 GitHub: <a href="https://github.com/joy12341234" target="_blank">github.com/joy12341234</a></p>
+        </header>
 
-    <header id="info">
-      <h1>👨‍💻 개발자 윤재호</h1>
-      <p>📧 dbswogh0715@dongyang.ac.kr</p>
-      <p>🔗 <a href="https://github.com/joy12341234" target="_blank">github.com/joy12341234</a></p>
-    </header>
+        <section id="strengths">
+            <h2><span>💪</span> 강점</h2>
+            <div class="card">
+                <div class="card-title">1. 무한하고 획기적인 기획 능력 💡</div>
+                <div class="card-desc">기존의 틀에 얽매이지 않는 유연한 사고로, 프로젝트의 핵심 가치를 높이는 창의적인 아이디어를 도출합니다.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">2. AR/VR 컨텐츠 기획 및 디자인 능력 👓</div>
+                <div class="card-desc">가상 세계와 현실을 잇는 몰입감 있는 사용자 경험을 설계하며, 실감형 기술의 특성을 극대화한 콘텐츠를 제작합니다.</div>
+            </div>
+        </section>
 
-    <div class="section" id="strength">
-      <h2>💡 강점</h2>
-      <ul>
-        <li>🚀 무한하고 획기적인 기획 능력 - 창의적인 아이디어를 기반으로 새로운 프로젝트를 기획합니다.</li>
-        <li>🎮 AR/VR 콘텐츠 기획 및 디자인 능력 - 몰입감 있는 사용자 경험을 설계합니다.</li>
-      </ul>
+        <section id="tech">
+            <h2><span>🛠️</span> 기술 스택</h2>
+            <div class="tech-grid">
+                <div class="tech-item t1"><strong>Front:</strong> React, HTML, CSS</div>
+                <div class="tech-item t2"><strong>Back:</strong> Java, REST API</div>
+                <div class="tech-item t3"><strong>AR/VR:</strong> Unity, C#, Unreal, Blender</div>
+                <div class="tech-item t4"><strong>HW:</strong> C, Arduino, MySQL</div>
+            </div>
+            <div class="tech-item" style="margin-top:10px; background:#fff3e0; color:#ef6c00;"><strong>Video:</strong> Adobe After Effects</div>
+        </section>
+
+        <section id="project">
+            <h2><span>🚀</span> 프로젝트</h2>
+            <div class="card" style="border-left: 5px solid #ffccbc;">
+                <div class="card-title">UPM (Universal Process Manager)</div>
+                <div class="card-desc">
+                    복잡한 컴퓨터 시스템 자원을 직관적으로 관리할 수 있는 최적화 솔루션입니다. 
+                    사용자 친화적인 프로세스 모니터링 기능을 통해 효율적인 하드웨어 제어 환경을 제공합니다.
+                </div>
+            </div>
+        </section>
+
+        <section id="edu">
+            <h2><span>🎓</span> 학력 / 경력</h2>
+            <div class="edu-box">
+                <p class="univ">동양미래대학교 컴퓨터소프트웨어공학과</p>
+                <p class="date">2021 ~ ing</p>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2><span>🏆</span> 수상내역</h2>
+            <div class="empty">새로운 수상 내역을 기다리고 있습니다.</div>
+        </section>
     </div>
-
-    <div class="section" id="skill">
-      <h2>🛠 기술 스택</h2>
-      <ul>
-        <li>💻 Front : React, HTML, CSS</li>
-        <li>⚙ Back-End : Java, REST API</li>
-        <li>🔌 System / Hardware : C, Arduino</li>
-        <li>🕶 AR/VR : Unity, C#, Unreal Engine, Blender</li>
-        <li>🗄 Database : MySQL</li>
-        <li>🎬 Video Edit : Adobe Effects</li>
-      </ul>
-    </div>
-
-    <div class="section" id="project">
-      <h2>📂 프로젝트</h2>
-      <p><b>UPM (User PC Management)</b></p>
-      <p>Python FastAPI 기반 REST API 서버와 C# 클라이언트를 연동하여 사용자 PC를 관리하는 프로그램입니다. MySQL을 통해 데이터 저장 및 통계 제공, JSON 기반 통신을 구현했습니다.</p>
-    </div>
-
-    <div class="section" id="edu">
-      <h2>🎓 학력 / 경력</h2>
-      <p>동양미래대학교 컴퓨터소프트웨어공학과</p>
-      <p class="small">2021 ~ ing</p>
-    </div>
-
-    <div class="section" id="award">
-      <h2>🏆 수상내역</h2>
-      <p class="small">(추후 추가 예정)</p>
-    </div>
-
-  </div>
 
 </body>
 </html>
