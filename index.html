@@ -1,121 +1,169 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>윤재호 이력서</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fbff;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이력서 - 윤재호</title>
+    <style>
+        /* CSS Reset & Font */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: #f8fbff;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
 
-    .container {
-      width: 80%;
-      margin: auto;
-      padding: 20px;
-    }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
 
-    header {
-      text-align: center;
-      padding: 40px 0;
-      background: #e3f2fd;
-      border-radius: 12px;
-    }
+        /* Common Layout */
+        section { margin-bottom: 40px; }
+        h2 {
+            font-size: 1.5rem;
+            color: #7da2d1; /* 파스텔 블루 */
+            border-bottom: 2px solid #e1ecf7;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
 
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
+        /* Header / Basic Info */
+        header { text-align: center; margin-bottom: 50px; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; color: #444; }
+        .contact-info { color: #666; font-size: 0.95rem; }
+        .contact-info a { color: #7da2d1; text-decoration: none; margin: 0 10px; }
 
-    h2 {
-      border-left: 6px solid #a5d6a7;
-      padding-left: 10px;
-      margin-top: 40px;
-      color: #444;
-    }
+        /* Strengths */
+        .strength-item { margin-bottom: 15px; }
+        .strength-title { font-weight: bold; font-size: 1.1rem; color: #555; }
+        .strength-desc { font-size: 0.95rem; color: #777; margin-top: 3px; }
 
-    .section {
-      background: #ffffff;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+        /* Tech Stack Table */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .tech-category {
+            background: #f1f6ff;
+            padding: 15px;
+            border-radius: 12px;
+        }
+        .tech-category strong { color: #5a7da3; display: block; margin-bottom: 5px; }
 
-    ul {
-      padding-left: 20px;
-    }
+        /* Project */
+        .project-card {
+            background: #fffaf0; /* 아주 연한 파스텔 오렌지/옐로우 포인트 */
+            border-left: 5px solid #ffdfba;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .project-name { font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; }
 
-    .small {
-      font-size: 0.9rem;
-      color: #777;
-    }
+        /* Education */
+        .edu-title { font-size: 1.1rem; font-weight: 600; }
+        .edu-date { font-size: 0.85rem; color: #999; margin-top: 2px; }
 
-    .highlight {
-      color: #64b5f6;
-      font-weight: bold;
-    }
-
-    a {
-      color: #64b5f6;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        /* Empty State (Awards) */
+        .empty-content {
+            height: 60px;
+            border: 2px dashed #eee;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
+<div class="container">
     <header>
-      <h1>개발자 윤재호</h1>
-      <p>이메일 : dbswogh0715@dongyang.ac.kr</p>
-      <p>GitHub : <a href="https://github.com/joy12341234" target="_blank">github.com/joy12341234</a></p>
+        <h1>개발자 윤재호</h1>
+        <div class="contact-info">
+            이메일: <a href="mailto:dbswogh0715@dongyang.ac.kr">dbswogh0715@dongyang.ac.kr</a> |
+            GitHub: <a href="https://github.com/joy12341234" target="_blank">github.com/joy12341234</a>
+        </div>
     </header>
 
-    <div class="section">
-      <h2>강점</h2>
-      <ul>
-        <li><span class="highlight">무한하고 획기적인 기획 능력</span> - 새로운 아이디어를 끊임없이 도출하며 창의적인 프로젝트 기획이 가능합니다.</li>
-        <li><span class="highlight">AR/VR 콘텐츠 기획 및 디자인 능력</span> - 사용자 경험을 고려한 몰입형 콘텐츠 설계 및 디자인이 가능합니다.</li>
-      </ul>
-    </div>
+    <section>
+        <h2>강점</h2>
+        <div class="strength-item">
+            <p class="strength-title">1. 무한하고 획기적인 기획 능력</p>
+            <p class="strength-desc">사용자의 니즈를 넘어서는 새로운 경험을 설계하며, 기술적 구현 가능성을 고려한 창의적인 솔루션을 제안합니다.</p>
+        </div>
+        <div class="strength-item">
+            <p class="strength-title">2. AR/VR 컨텐츠 기획 및 디자인 능력</p>
+            <p class="strength-desc">가상 세계의 몰입감을 극대화하는 스토리보딩과 인터랙션 설계를 통해 실감형 콘텐츠의 완성도를 높입니다.</p>
+        </div>
+    </section>
 
-    <div class="section">
-      <h2>기술 스택</h2>
-      <ul>
-        <li><b>Front</b> : React, HTML, CSS</li>
-        <li><b>Back-End</b> : Java, REST API</li>
-        <li><b>System / Hardware</b> : C, Arduino</li>
-        <li><b>AR/VR</b> : Unity, C#, Unreal Engine, Blender</li>
-        <li><b>Database</b> : MySQL</li>
-        <li><b>Video Edit</b> : Adobe Effects</li>
-      </ul>
-    </div>
+    <section>
+        <h2>기술 스택</h2>
+        <div class="tech-grid">
+            <div class="tech-category">
+                <strong>Front-End</strong>
+                React, HTML, CSS
+            </div>
+            <div class="tech-category">
+                <strong>Back-End</strong>
+                Java, REST API
+            </div>
+            <div class="tech-category">
+                <strong>AR/VR</strong>
+                Unity, C#, Unreal Engine, Blender
+            </div>
+            <div class="tech-category">
+                <strong>System & HW</strong>
+                C, Arduino
+            </div>
+            <div class="tech-category">
+                <strong>Database</strong>
+                MySQL
+            </div>
+            <div class="tech-category">
+                <strong>Video Edit</strong>
+                Adobe Effects
+            </div>
+        </div>
+    </section>
 
-    <div class="section">
-      <h2>프로젝트</h2>
-      <p><span class="highlight">UPM (User PC Management)</span></p>
-      <p>Python FastAPI 기반 REST API 서버와 C# 클라이언트를 연동하여 사용자 PC를 효율적으로 관리하는 프로그램입니다. MySQL 데이터베이스를 활용하여 사용 데이터를 저장하고 통계를 제공하며, JSON 데이터 직렬화를 통해 시스템 간 원활한 통신을 구현했습니다.</p>
-    </div>
+    <section>
+        <h2>프로젝트</h2>
+        <div class="project-card">
+            <p class="project-name">UPM (Universal Process Manager)</p>
+            <p class="strength-desc">
+                효율적인 시스템 자원 관리와 프로세스 모니터링을 위한 컴퓨터 관리 프로그램입니다. 
+                사용자 중심의 UI를 통해 복잡한 시스템 정보를 한눈에 파악하고 최적화할 수 있도록 설계되었습니다.
+            </p>
+        </div>
+    </section>
 
-    <div class="section">
-      <h2>학력 / 경력</h2>
-      <p>동양미래대학교 컴퓨터소프트웨어공학과</p>
-      <p class="small">2021 ~ ing</p>
-    </div>
+    <section>
+        <h2>학력 / 경력</h2>
+        <div>
+            <p class="edu-title">동양미래대학교 컴퓨터소프트웨어공학과</p>
+            <p class="edu-date">2021 ~ ing</p>
+        </div>
+    </section>
 
-    <div class="section">
-      <h2>수상내역</h2>
-      <p class="small">(추후 추가 예정)</p>
-    </div>
-
-  </div>
+    <section>
+        <h2>수상내역</h2>
+        <div class="empty-content">
+            내용을 입력해주세요.
+        </div>
+    </section>
+</div>
 
 </body>
 </html>
