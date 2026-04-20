@@ -1,79 +1,121 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>윤재호 이력서</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: skyblue;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .first {
-	text-align: center
-	}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>윤재호 이력서</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fbff;
+      color: #333;
+    }
 
-    </style>
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 0;
+      background: #e3f2fd;
+      border-radius: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      border-left: 6px solid #a5d6a7;
+      padding-left: 10px;
+      margin-top: 40px;
+      color: #444;
+    }
+
+    .section {
+      background: #ffffff;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .highlight {
+      color: #64b5f6;
+      font-weight: bold;
+    }
+
+    a {
+      color: #64b5f6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-	<h1 class="first">이력서</h1>
-            <h1>윤재호</h1>
-        </header>
-        <section id="contact-info">
-            <h2>연락처</h2>
-            <ul>
-                <li><strong>이메일:</strong> <a href="mailto:dbswogh0715@dongyang.ac.kr">dbswogh0715@dongyang.ac.kr</a></li>
-            </ul>
-        </section>
-        <section id="education">
-            <h2>학력</h2>
-            <ul>
-                <li><strong>대학:</strong> 동양미래대학교</li>
-                <li><strong>전공:</strong> 컴퓨터소프트웨어공학과</li>
-                <li><strong>입학년도:</strong> 2021년도</li>
-            </ul>
-        </section>
-        <section id="skills">
-            <h2>기술 스택</h2>
-            <ul>
-                <li>파이썬</li>
-                <li>HTML/CSS</li>
-                <li>개발도구 등</li>
-            </ul>
-        </section>
-        <section id="experience">
-            <h2>경력/프로젝트</h2>
-            <ul>
-                <li>HTML 홈페이지 꾸미기</li>
-                <li>파이썬을 이용한 프로젝트</li>
-            </ul>
-        </section>
-        <section id="interests">
-            <h2>관심 기술분야</h2>
-            <p>서비스, 웹 개발, 데이터 분석 등</p>
-        </section>
-        <img src="jjanggu.jpg" alt="짱구사진" width="800px" height="500px">
+
+  <div class="container">
+    <header>
+      <h1>개발자 윤재호</h1>
+      <p>이메일 : dbswogh0715@dongyang.ac.kr</p>
+      <p>GitHub : <a href="https://github.com/joy12341234" target="_blank">github.com/joy12341234</a></p>
+    </header>
+
+    <div class="section">
+      <h2>강점</h2>
+      <ul>
+        <li><span class="highlight">무한하고 획기적인 기획 능력</span> - 새로운 아이디어를 끊임없이 도출하며 창의적인 프로젝트 기획이 가능합니다.</li>
+        <li><span class="highlight">AR/VR 콘텐츠 기획 및 디자인 능력</span> - 사용자 경험을 고려한 몰입형 콘텐츠 설계 및 디자인이 가능합니다.</li>
+      </ul>
     </div>
+
+    <div class="section">
+      <h2>기술 스택</h2>
+      <ul>
+        <li><b>Front</b> : React, HTML, CSS</li>
+        <li><b>Back-End</b> : Java, REST API</li>
+        <li><b>System / Hardware</b> : C, Arduino</li>
+        <li><b>AR/VR</b> : Unity, C#, Unreal Engine, Blender</li>
+        <li><b>Database</b> : MySQL</li>
+        <li><b>Video Edit</b> : Adobe Effects</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>프로젝트</h2>
+      <p><span class="highlight">UPM (User PC Management)</span></p>
+      <p>Python FastAPI 기반 REST API 서버와 C# 클라이언트를 연동하여 사용자 PC를 효율적으로 관리하는 프로그램입니다. MySQL 데이터베이스를 활용하여 사용 데이터를 저장하고 통계를 제공하며, JSON 데이터 직렬화를 통해 시스템 간 원활한 통신을 구현했습니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>학력 / 경력</h2>
+      <p>동양미래대학교 컴퓨터소프트웨어공학과</p>
+      <p class="small">2021 ~ ing</p>
+    </div>
+
+    <div class="section">
+      <h2>수상내역</h2>
+      <p class="small">(추후 추가 예정)</p>
+    </div>
+
+  </div>
+
 </body>
 </html>
