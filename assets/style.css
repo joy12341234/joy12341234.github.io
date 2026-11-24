@@ -276,7 +276,7 @@ img { max-width: 100%; }
 /* ---------- 소개 ---------- */
 .intro {
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 72px);
   padding-top: clamp(72px, 9vw, 120px);
   align-items: start;
@@ -289,6 +289,28 @@ img { max-width: 100%; }
   letter-spacing: -0.015em;
 }
 .facts { margin: 6px 0 0; }
+
+/* 증명사진 + 기본 정보 */
+.profile {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #FFFFFF;
+  outline: 1px solid var(--rule);
+}
+.profile .facts { margin: 0; }
+.profile .facts div { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 8px 0; }
+.profile .facts div:first-child { border-top: none; padding-top: 0; }
+.profile .facts dt { font-size: 13px; }
 .facts div,
 .spec div,
 .tool-list div {
@@ -449,9 +471,11 @@ img { max-width: 100%; }
   /* 좁은 화면에서는 글자와 겹치는 마커를 숨김 */
   .marker:nth-of-type(2), .marker:nth-of-type(7), .marker:nth-of-type(8), .marker:nth-of-type(9) { display: none; }
   .top nav { gap: 18px; }
+  .profile { grid-template-columns: 132px minmax(0, 1fr); gap: 20px; }
 }
 @media (max-width: 420px) {
   body { font-size: 16px; }
   .top nav a { font-size: 14px; }
   .stage-controls { width: 100%; justify-content: space-between; }
+  .profile { grid-template-columns: 104px minmax(0, 1fr); gap: 16px; }
 }
