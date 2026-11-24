@@ -1,203 +1,212 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이력서 - 윤재호</title>
-    <style>
-        /* 배경 설정: 파스텔 그라데이션 */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Pretendard', sans-serif;
-            background: linear-gradient(135deg, #fce4ec 0%, #e1f5fe 25%, #f3e5f5 50%, #e8f5e9 75%, #fff9c4 100%);
-            background-attachment: fixed;
-            color: #4a5568;
-            scroll-behavior: smooth;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>윤재호 포트폴리오</title>
+  <meta name="description" content="가상 공간과 영상을 기술로 만드는 개발자 윤재호의 포트폴리오입니다. 인터랙티브 전시, AI 영상 제작 도우미, PC 관리 프로그램 등 프로젝트를 소개합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="윤재호 포트폴리오">
+  <meta property="og:description" content="가상 공간과 영상을 기술로 만드는 개발자 윤재호의 프로젝트 모음">
+  <meta property="og:url" content="https://joy12341234.github.io/">
+  <meta property="og:image" content="https://joy12341234.github.io/assets/img/og.png">
+  <meta name="theme-color" content="#F3F3F0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300B140'/%3E%3Cpath d='M9 8h4l3 7 3-7h4l-5 10v6h-4v-6z' fill='%2316181B'/%3E%3C/svg%3E">
 
-        /* 상단 고정 목차 */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            padding: 15px 0;
-        }
-        nav a {
-            margin: 0 12px;
-            text-decoration: none;
-            color: #5c6bc0;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-        nav a:hover { color: #ff80ab; transform: scale(1.1); }
-
-        .container {
-            max-width: 850px;
-            margin: 100px auto 50px;
-            background: rgba(255, 255, 255, 0.92);
-            padding: 50px;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
-        }
-
-        /* 섹션 타이틀 */
-        section { margin-bottom: 50px; padding-top: 30px; }
-        h2 {
-            font-size: 1.6rem;
-            color: #7986cb;
-            border-bottom: 3px solid #f1f6ff;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-        }
-
-        /* 기본 정보 */
-        header { text-align: center; margin-bottom: 50px; }
-        header h1 { font-size: 2.5rem; color: #3f51b5; margin-bottom: 15px; }
-        .info-p { font-size: 1rem; color: #666; margin: 8px 0; }
-        .info-p a { color: #7986cb; text-decoration: none; font-weight: 500; }
-
-        /* 강점 및 프로젝트 카드 */
-        .card {
-            background: #fff;
-            border: 1px solid #f0f0f0;
-            padding: 22px;
-            border-radius: 18px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-        .card-title { font-weight: bold; font-size: 1.1rem; color: #444; margin-bottom: 8px; }
-        .card-desc { font-size: 0.95rem; color: #777; line-height: 1.7; }
-
-        /* 기술 스택 (풀네임 적용) */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        .tech-item {
-            padding: 18px;
-            border-radius: 15px;
-            line-height: 1.6;
-        }
-        .tech-item strong { display: block; margin-bottom: 5px; font-size: 1.05rem; }
-        
-        .t-front { background-color: #e3f2fd; color: #1565c0; }
-        .t-back { background-color: #f3e5f5; color: #7b1fa2; }
-        .t-arvr { background-color: #e8f5e9; color: #2e7d32; }
-        .t-hw { background-color: #fff3e0; color: #e65100; }
-        .t-db { background-color: #fce4ec; color: #c2185b; }
-        .t-video { background-color: #ede7f6; color: #4527a0; }
-
-        /* 학력 */
-        .edu-box { padding: 10px; }
-        .univ { font-size: 1.15rem; font-weight: bold; color: #333; }
-        .date { font-size: 0.9rem; color: #888; margin-top: 4px; }
-
-        /* 수상내역 */
-        .empty {
-            border: 2px dashed #e0e0e0;
-            padding: 40px;
-            text-align: center;
-            color: #bbb;
-            border-radius: 15px;
-            font-size: 0.95rem;
-        }
-    </style>
+  <!-- 글꼴: Wanted Sans(본문·한글), Archivo(영문 큰 글씨) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/wanted-sans@1.0.3/fonts/webfonts/variable/split/WantedSansVariable.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/archivo@5.3.0/wdth.css">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="#basic">기본정보 📋</a>
-        <a href="#strengths">강점 💪</a>
-        <a href="#tech">기술스택 🛠️</a>
-        <a href="#project">프로젝트 🚀</a>
-        <a href="#edu">학력/경력 🎓</a>
-        <a href="#awards">수상내역 🏆</a>
+  <a class="skip" href="#main">본문 바로가기</a>
+
+  <header class="top wrap">
+    <a class="wordmark" href="#">윤재호</a>
+    <nav aria-label="페이지 목차">
+      <a href="#projects">프로젝트</a>
+      <a href="#tools">도구</a>
+      <a href="#contact">연락처</a>
     </nav>
+  </header>
 
-    <div class="container">
-        <header id="basic">
-            <h1>👨‍💻 개발자 윤재호</h1>
-            <p class="info-p">📧 이메일: <a href="mailto:dbswogh0715@dongyang.ac.kr">dbswogh0715@dongyang.ac.kr</a></p>
-            <p class="info-p">🔗 GitHub: <a href="https://github.com/joy12341234" target="_blank">github.com/joy12341234</a></p>
-        </header>
+  <main id="main">
 
-        <section id="strengths">
-            <h2>💪 강점</h2>
-            <div class="card">
-                <div class="card-title">1. 무한하고 획기적인 기획 능력 💡</div>
-                <div class="card-desc">사용자의 숨겨진 니즈를 파악하여 기술과 감성이 조화된 새로운 서비스를 기획하며, 문제 해결을 위한 독창적인 접근 방식을 제시합니다.</div>
-            </div>
-            <div class="card">
-                <div class="card-title">2. AR/VR 컨텐츠 기획 및 디자인 능력 👓</div>
-                <div class="card-desc">가상 현실에서의 몰입형 사용자 인터페이스(UI)와 경험(UX)을 설계하고, 효율적인 스토리보드 작성을 통해 생동감 있는 콘텐츠를 구축합니다.</div>
-            </div>
-        </section>
+    <!-- 첫 화면: 그린 스크린이 키잉되어 사라지는 뷰어 -->
+    <section class="wrap" aria-label="소개">
+      <div class="viewer" id="viewer">
+        <div class="viewer-alpha" aria-hidden="true"></div>
+        <div class="viewer-green" aria-hidden="true"></div>
+        <div class="viewer-content">
+          <p class="viewer-caption">윤재호 포트폴리오, 2026</p>
+          <h1 class="name"><span>Yoon</span><span>Jaeho</span></h1>
+          <p class="tagline">가상 공간과 영상을 기술로 만드는 개발자</p>
+        </div>
+        <div class="wipe" id="wipe" role="slider" tabindex="0"
+             aria-label="그린 스크린 키잉 위치" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <span class="wipe-grip" aria-hidden="true"></span>
+        </div>
+        <p class="readout" aria-hidden="true">키잉 <span id="readout">0</span>%</p>
+      </div>
+      <p class="viewer-hint">화면 위를 좌우로 끌어 그린 스크린을 다시 켜고 끌 수 있습니다.</p>
+    </section>
 
-        <section id="tech">
-            <h2>🛠️ 기술 스택</h2>
-            <div class="tech-grid">
-                <div class="tech-item t-front">
-                    <strong>💻 Front-End</strong>
-                    React, HTML, CSS
-                </div>
-                <div class="tech-item t-back">
-                    <strong>⚙️ Back-End</strong>
-                    Java, REST API
-                </div>
-                <div class="tech-item t-arvr">
-                    <strong>🥽 AR/VR Development</strong>
-                    Unity, C#, Unreal Engine, Blender
-                </div>
-                <div class="tech-item t-hw">
-                    <strong>🔌 System & Hardware</strong>
-                    C, Arduino
-                </div>
-                <div class="tech-item t-db">
-                    <strong>🗄️ Database</strong>
-                    MySQL
-                </div>
-                <div class="tech-item t-video">
-                    <strong>🎬 Video Editing</strong>
-                    Adobe After Effects
-                </div>
-            </div>
-        </section>
+    <!-- 소개 -->
+    <section class="intro wrap" aria-label="자기소개">
+      <p class="intro-lead">센서와 게임 엔진, AI를 엮어 사람이 움직이면 반응하는 화면을 만들어 왔습니다. 실시간으로 돌아가는 가상 공간과 영상을 만드는 현장에서 일하고 싶습니다.</p>
+      <dl class="facts">
+        <div><dt>학교</dt><dd>동양미래대학교 컴퓨터소프트웨어공학과 (2021–)</dd></div>
+        <div><dt>관심 분야</dt><dd>버추얼 프로덕션, 실시간 3D, 인터랙티브 콘텐츠</dd></div>
+        <div><dt>이메일</dt><dd><a href="mailto:dbswogh0715@dongyang.ac.kr">dbswogh0715@dongyang.ac.kr</a></dd></div>
+        <div><dt>GitHub</dt><dd><a href="https://github.com/joy12341234" target="_blank" rel="noopener">github.com/joy12341234</a></dd></div>
+      </dl>
+    </section>
 
-        <section id="project">
-            <h2>🚀 프로젝트</h2>
-            <div class="card" style="border-left: 5px solid #ffccbc;">
-                <div class="card-title">UPM (Universal Process Manager)</div>
-                <div class="card-desc">
-                    복잡한 윈도우 프로세스를 직관적으로 모니터링하고 제어할 수 있는 시스템 최적화 프로그램입니다. 
-                    하드웨어 리소스 효율성을 극대화하기 위한 대시보드와 사용자 친화적 관리 인터페이스를 구현했습니다.
-                </div>
-            </div>
-        </section>
+    <!-- 프로젝트
+         새 프로젝트를 넣을 때는 <article class="project"> ... </article> 하나를 통째로 복사해서 내용만 바꾸면 됩니다. -->
+    <section class="projects wrap" id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">프로젝트</h2>
 
-        <section id="edu">
-            <h2>🎓 학력 / 경력</h2>
-            <div class="edu-box">
-                <p class="univ">동양미래대학교 컴퓨터소프트웨어공학과</p>
-                <p class="date">2021 ~ ing</p>
-            </div>
-        </section>
+      <article class="project">
+        <figure class="project-media alpha">
+          <img src="assets/img/ai-director.webp" width="1600" height="900" loading="lazy"
+               alt="휴대폰과 삼각대로 노을 진 바닷가에서 영상을 찍는 가족 일러스트">
+          <figcaption>서비스 표지 이미지 (AI로 생성)</figcaption>
+        </figure>
+        <div class="project-body">
+          <h3 class="project-title">AI 영상 디렉터</h3>
+          <p class="project-sub">숏폼·롱폼 영상 제작 도우미</p>
+          <p class="project-desc">주제만 입력하면 기획안, 컷별 콘티와 스케치 그림, 촬영 가이드, 편집 가이드를 차례로 만들어 주는 웹 서비스입니다. 콘티의 장면 번호가 촬영과 편집 단계까지 그대로 이어져 한 흐름으로 작업할 수 있습니다.</p>
+          <h4 class="points-title">구현한 것</h4>
+          <ul class="points">
+            <li>컷마다 샷 크기, 앵글, 카메라 무빙, 대사, 길이를 LLM이 JSON으로 정리하고 이미지 생성 AI가 컷별 콘티 그림을 그립니다.</li>
+            <li>편집 단계에서 컷 순서와 자막 문구를 안내하고 SRT 자막 파일을 내려받을 수 있게 했습니다.</li>
+            <li>인기 콘티 차트와 촬영 후기 기능을 붙이고 Render와 Supabase로 배포해 실제 사용자에게 공개했습니다.</li>
+          </ul>
+          <dl class="spec">
+            <div><dt>시기</dt><dd>2026년 10–11월</dd></div>
+            <div><dt>형태</dt><dd>개인 프로젝트, 인공지능프로젝트 수업 생성형 AI 경진대회</dd></div>
+            <div><dt>도구</dt><dd>React, Vite, FastAPI, OpenAI API, Supabase, Render</dd></div>
+          </dl>
+          <p class="links">
+            <a href="https://ai-video-director-x5dw.onrender.com" target="_blank" rel="noopener">서비스 열기</a>
+            <a href="https://github.com/joy12341234/AIProject" target="_blank" rel="noopener">코드 보기</a>
+          </p>
+        </div>
+      </article>
 
-        <section id="awards">
-            <h2>🏆 수상내역</h2>
-            <div class="empty">업데이트 예정입니다.</div>
-        </section>
+      <article class="project">
+        <figure class="project-media alpha">
+          <img src="assets/img/interection.webp" width="1600" height="900" loading="lazy"
+               alt="어두운 배경에 붉은 글씨로 '자유를 찾아서'라고 쓰인 프로젝트 소개 페이지 첫 화면">
+          <figcaption>프로젝트 소개 페이지 첫 화면</figcaption>
+        </figure>
+        <div class="project-body">
+          <h3 class="project-title">자유를 찾아서</h3>
+          <p class="project-sub">강의자료를 부수는 체감형 인터랙티브 전시</p>
+          <p class="project-desc">강의실 스크린에 띄운 강의자료를 손짓과 소리로 불태우고 찢는 1인 체험 전시입니다. PIR 센서가 관람객을 감지하고, LiDAR가 손 위치를, 마이크가 소리 크기를 읽어 Unity 안의 이벤트로 바꿉니다.</p>
+          <h4 class="points-title">핵심 내용</h4>
+          <ul class="points">
+            <li>검은 배경의 이펙트 영상을 커스텀 셰이더로 투명 처리해 강의자료 화면 위에 겹쳤습니다.</li>
+            <li>Unity VideoPlayer의 반복 재생 오류를 H.264 baseline, bt709로 다시 인코딩해 해결했습니다.</li>
+            <li>구역 좌표, 영상, 인터랙션 종류를 config.json으로 분리해 빌드 없이 현장에서 조정할 수 있게 했습니다.</li>
+          </ul>
+          <dl class="spec">
+            <div><dt>시기</dt><dd>2026년 1학기</dd></div>
+            <div><dt>형태</dt><dd>4인 팀 프로젝트, 체감형 인터랙션 디자인 수업</dd></div>
+            <div><dt>도구</dt><dd>Unity 2022.3, C#, PIR·LiDAR·마이크 센서, 프로젝터</dd></div>
+          </dl>
+          <p class="links">
+            <a href="https://joy12341234.github.io/interection/" target="_blank" rel="noopener">소개 페이지 보기</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="project">
+        <figure class="project-media alpha project-media--stack">
+          <img class="layer-pc" src="assets/img/upm-pc.webp" width="1600" height="845" loading="lazy"
+               alt="CPU, 메모리, GPU 사용률 게이지와 메모리 사용 상위 프로세스 목록이 보이는 UPM PC 프로그램 화면">
+          <img class="layer-phone layer-phone--a" src="assets/img/upm-mobile-home.webp" width="540" height="1046" loading="lazy"
+               alt="UPM 모바일 앱의 실시간 모니터 화면">
+          <img class="layer-phone layer-phone--b" src="assets/img/upm-mobile-control.webp" width="540" height="1046" loading="lazy"
+               alt="UPM 모바일 앱의 빠른 최적화, 전원 끄기, PC 재시작 버튼 화면">
+          <figcaption>PC 프로그램과 모바일 앱 실제 화면</figcaption>
+        </figure>
+        <div class="project-body">
+          <h3 class="project-title">UPM</h3>
+          <p class="project-sub">Universal PC Manager, PC 모니터링과 원격 제어</p>
+          <p class="project-desc">PC의 CPU, 메모리, GPU 상태를 실시간으로 보여 주고, 스마트폰에서 최적화와 전원 제어까지 할 수 있는 PC 관리 프로그램입니다. Windows 클라이언트, 모바일 앱, 서버로 이루어진 졸업작품입니다.</p>
+          <h4 class="points-title">맡은 일</h4>
+          <ul class="points">
+            <li>최적화할 때 종료하지 않을 앱을 고르는 화이트리스트 기능을 WPF 화면부터 서버 동기화까지 구현했습니다.</li>
+            <li>앱을 내려받을 수 있는 소개 웹사이트를 만들어 GitHub Pages로 배포했습니다.</li>
+            <li>Windows 설치 파일을 Inno Setup으로 만들었습니다.</li>
+          </ul>
+          <dl class="spec">
+            <div><dt>시기</dt><dd>2026년</dd></div>
+            <div><dt>형태</dt><dd>졸업작품, DMU-DeCode 팀</dd></div>
+            <div><dt>도구</dt><dd>C#, WPF, FastAPI, MySQL</dd></div>
+          </dl>
+          <p class="links">
+            <a href="https://joy12341234.github.io/UPM_WebSite/" target="_blank" rel="noopener">소개 웹사이트 보기</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="project">
+        <figure class="project-media alpha project-media--type">
+          <p class="type-plate">투구 데이터로<br>제구 성공 확률을<br>예측하는 모델</p>
+          <figcaption>해커톤 과제</figcaption>
+        </figure>
+        <div class="project-body">
+          <h3 class="project-title">LG Aimers 9기</h3>
+          <p class="project-sub">AI 교육 과정과 해커톤</p>
+          <p class="project-desc">머신러닝 교육 과정을 거쳐 Phase 2 해커톤에 참가했습니다. 투구 추적 데이터로 공이 제구에 성공할 확률을 예측하는 모델을 만들었습니다.</p>
+          <h4 class="points-title">구현한 것</h4>
+          <ul class="points">
+            <li>LightGBM과 특성 공학으로 확률 예측 모델을 만들었습니다.</li>
+            <li>평가 서버의 Python 3.11, pandas 2.0 환경에 맞춰 로컬 환경을 다시 구성하고 제출 파이프라인을 정리했습니다.</li>
+          </ul>
+          <dl class="spec">
+            <div><dt>시기</dt><dd>2026년 여름</dd></div>
+            <div><dt>형태</dt><dd>개인 참가, Dacon 해커톤</dd></div>
+            <div><dt>도구</dt><dd>Python, pandas, LightGBM</dd></div>
+          </dl>
+        </div>
+      </article>
+    </section>
+
+    <!-- 다룰 수 있는 도구 -->
+    <section class="tools wrap" id="tools" aria-labelledby="tools-title">
+      <h2 class="section-title" id="tools-title">다룰 수 있는 도구</h2>
+      <dl class="tool-list">
+        <div><dt>실시간 3D</dt><dd>Unreal Engine 5, Unity, Blender</dd></div>
+        <div><dt>영상과 이미지</dt><dd>After Effects, 생성형 이미지 AI, 영상 인코딩 설정(H.264)</dd></div>
+        <div><dt>AI</dt><dd>OpenAI API(LLM, 이미지 생성), ChatGPT·Claude를 활용한 기획과 개발</dd></div>
+        <div><dt>개발</dt><dd>C, C++, C#, Java, Python, JavaScript, React, FastAPI, MySQL</dd></div>
+        <div><dt>하드웨어</dt><dd>Arduino, PIR·LiDAR·마이크 센서 연동</dd></div>
+      </dl>
+    </section>
+
+    <!-- 연락처 -->
+    <section class="contact wrap" id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">연락처</h2>
+      <p class="contact-lead">함께 만들 장면이 있다면 편하게 메일 주세요.</p>
+      <a class="contact-mail" href="mailto:dbswogh0715@dongyang.ac.kr">dbswogh0715@dongyang.ac.kr</a>
+      <p class="links"><a href="https://github.com/joy12341234" target="_blank" rel="noopener">GitHub 프로필</a></p>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <div class="foot">
+      <p>© 2026 윤재호</p>
+      <p>HTML, CSS, JavaScript로 직접 만들고 GitHub Pages로 운영합니다.</p>
     </div>
+  </footer>
 
+  <script src="assets/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,4 @@
+# local only
+*.bat
+Thumbs.db
+desktop.ini
